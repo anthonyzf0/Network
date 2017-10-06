@@ -1,0 +1,6 @@
+C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\bin\Debug\Networking.exe.config
+C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\bin\Debug\Networking.exe
+C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\bin\Debug\Networking.pdb
+C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\bin\Debug\encog-core-cs.dll
+C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\obj\Debug\Networking.exe
+C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\obj\Debug\Networking.pdb
