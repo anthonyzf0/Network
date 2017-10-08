@@ -36,7 +36,7 @@ namespace Networking
             foreach (double[] d in english)
             {
                 InData.Add(d);
-                OutData.Add(new Double[] { 1 });
+                OutData.Add(new Double[] { 0,1 });
             }
 
             //French values
@@ -66,31 +66,15 @@ namespace Networking
             foreach (double[] d in french)
             {
                 InData.Add(d);
-                OutData.Add(new Double[] { 0 });
+                OutData.Add(new Double[] { 1,0 });
             }
 
             Console.WriteLine("English : " + english.GetLength(0) + " French : " + french.GetLength(0));
 
             var network = new BasicNetwork();
             network.AddLayer(new BasicLayer(null, true, 5));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 26));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 13));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 8));
-            network.AddLayer(new BasicLayer(new ActivationSigmoid(), false, 1));
+            network.AddLayer(new BasicLayer(new ActivationSigmoid(), true, 200));
+            network.AddLayer(new BasicLayer(new ActivationSigmoid(), false, 2));
             network.Structure.FinalizeStructure();
             network.Reset();
 
@@ -103,16 +87,21 @@ namespace Networking
             do
             {
                 train.Iteration();
-                Console.WriteLine(@"Epoch #" + epoch + @" Error:" + train.Error);
+                if (epoch % 100 == 0)
+                    Console.WriteLine(@"Epoch #" + epoch + @" Error:" + Math.Round(train.Error,5));
                 epoch++;
-            } while (train.Error > 0.24);
+
+                if (Console.KeyAvailable)
+                    break;
+            } while (true);
 
             train.FinishTraining();
 
             Console.WriteLine("______________");
-            double[] outputs = new double[] {1 };
+            double[] outputs = new double[] {1,1 };
             while (true)
             {
+
                 String word = Console.ReadLine();
                 if (word.Length != 5) continue;
 
@@ -120,12 +109,11 @@ namespace Networking
 
 
                 network.Compute(data, outputs);
-                int num = (int)Math.Round(outputs[0]);
+                double fr = Math.Round(outputs[0],3);
+                double en = Math.Round(outputs[1],3);
 
-                Console.WriteLine((num == 1)?"English":"French");
-                Console.WriteLine("Certainty : " + Math.Round((1-Math.Abs(1 - outputs[0])),2)*100+" %");
-                Console.WriteLine(outputs[0]);
-               
+                Console.WriteLine("French: {0}, English: {1}",fr,en);
+                
             }
         }
             

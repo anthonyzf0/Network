@@ -4,3 +4,10 @@ C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\bin\
 C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\bin\Debug\encog-core-cs.dll
 C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\obj\Debug\Networking.exe
 C:\Users\eahscs\Documents\Visual Studio 2017\Projects\Networking\Networking\obj\Debug\Networking.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\bin\Debug\Networking.exe.config
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\obj\Debug\Networking.exe
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\obj\Debug\Networking.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\bin\Debug\Networking.exe
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\bin\Debug\Networking.pdb
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\bin\Debug\encog-core-cs.dll
+C:\Users\antho\OneDrive\Documents\GitHub\Network\Networking\Networking\obj\Debug\Networking.csprojResolveAssemblyReference.cache
